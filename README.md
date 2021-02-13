@@ -1,7 +1,7 @@
 # Lane-Detection-Algorithms
 Organizing and implementing multiple papers
 
-## 1. Hough Transformation & RACSAC
+## 1. Hough Transformation & RANSAC
 
 ## 2. Real time Detection of Lane Markers in Urban Streets
 Inverse Perspective Mapping 을 사용하여 좀 더 정교한 Line Detection을 수행
