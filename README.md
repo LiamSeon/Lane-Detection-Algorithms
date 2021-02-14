@@ -54,7 +54,6 @@ RANSAC을 이용한 방법에는 비가 왔을 때 오작동을 일으키는 경
 딥러닝의 경우 픽셀 별로 어노테이션하게 되는데 이는 이미지 상에서 상대적으로 적은 수의 픽셀을 차지하는 Lane의 경우 imbalanced한 데이터를 갖게 했음.
 이를 해결하기 위해 Message Passing 방법과 Multi task learning 방법을 사용함.
 
-하지만, Multi task learning 같은 경우에는 소실점을 마킹하고 운전 구역을 Annotation 하는 등 더 비싼 데이터를 이용함. 또한 MTL의 경우 Loss를 최적화하기 힘들게 설계되어있음. Message Passing은 Feed forward time이 상대적으로 증가하고 낮은 하드웨어 스펙을 요구하는 Lane Detection 특성 상 큰 문제점이 될 수 있음.
-
+하지만, Multi task learning 같은 경우에는 소실점을 마킹하고 운전 구역을 Annotation 하는 등 더 비싼 데이터를 이용함. 또한 MTL의 경우 Loss를 최적화하기 힘들게 설계되어있음. Message Passing은 Feed forward time이 상대적으로 증가하고 낮은 하드웨어 스펙을 요구하는 Lane Detection 특성 상 큰 문제점이 될 수 있음. 이러한 이유에서 저자는 Lightweight CNNs를 개발했다고 한다.
 ## 6. LaneATT
 
