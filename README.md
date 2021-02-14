@@ -4,12 +4,24 @@ Organizing and implementing multiple papers
 ## 1. Hough Transformation & RANSAC
 
 ## 2. Real time Detection of Lane Markers in Urban Streets
-Inverse Perspective Mapping 을 사용하여 좀 더 정교한 Line Detection을 수행.
+Inverse Perspective Mapping 을 사용하여 좀 더 정교한 Line Detection을 수행하는 알고리즘이다.
+
+다음과 같은 변환을 사용하는데
+<img width="455" alt="스크린샷 2021-02-14 오후 3 53 14" src="https://user-images.githubusercontent.com/68293683/107870570-c0b6d480-6edc-11eb-83a2-21467fc68767.png">
+
+<img width="399" alt="스크린샷 2021-02-14 오후 3 52 48" src="https://user-images.githubusercontent.com/68293683/107870558-b09ef500-6edc-11eb-8cec-4711c9c88420.png">
+
+결과적으로
+
+<img width="434" alt="스크린샷 2021-02-14 오후 3 53 00" src="https://user-images.githubusercontent.com/68293683/107870564-b7c60300-6edc-11eb-9c16-aee7d988e402.png">
+
+이런 이미지로 변한다.
 
 ## 3. A Novel Lane Detection System With Efficient Ground Truth Generation
 Interpolation을 이용해 효과적으로 Annotation 하는 방법을 제시.
 
 ## 4. VPGNet
+<img width="324" alt="스크린샷 2021-02-14 오후 3 51 13" src="https://user-images.githubusercontent.com/68293683/107870527-79304880-6edc-11eb-823d-f894c3673bc3.png">
 소실점과 차선 그리고 운전 구간 들을 어노테이션한 후 Multi Task Learning을 이용해 학습시킨 Network. SOTA 이긴하지만 MTL 이 대개 그렇듯 Loss들 간에 Balance를 맞추는 것이 어렵고 많은 양의 Annotation이 필요하다는 점이 단점이다.
 
 ## 5. Light weight CNNs by Self attention distillation
