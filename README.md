@@ -55,5 +55,23 @@ RANSAC을 이용한 방법에는 비가 왔을 때 오작동을 일으키는 경
 이를 해결하기 위해 Message Passing 방법과 Multi task learning 방법을 사용함.
 
 하지만, Multi task learning 같은 경우에는 소실점을 마킹하고 운전 구역을 Annotation 하는 등 더 비싼 데이터를 이용함. 또한 MTL의 경우 Loss를 최적화하기 힘들게 설계되어있음. Message Passing은 Feed forward time이 상대적으로 증가하고 낮은 하드웨어 스펙을 요구하는 Lane Detection 특성 상 큰 문제점이 될 수 있음. 이러한 이유에서 저자는 Lightweight CNNs를 개발했다고 한다.
+
+모델의 구조는 인코더-디코더 구조를 따르는 Enet 기반이며, Lane인지 아닌지 평가하기 위한 Binary Classification Output을 추가했다.
+
+<img width="735" alt="스크린샷 2021-02-14 오후 8 23 26" src="https://user-images.githubusercontent.com/68293683/107875298-8102e380-6f02-11eb-88cd-5b179077bf21.png">
+
+
+Loss function은 각 픽셀의 Segmentation의 Loss, 그리고 Lane pixel의 IOU Loss, Lane이 존재하는지 안하는지 표기하는 Binary Classification Loss, 그리고 Self Distillation Loss로 이루어진다.
+
+<img width="353" alt="스크린샷 2021-02-14 오후 8 20 38" src="https://user-images.githubusercontent.com/68293683/107875245-1c478900-6f02-11eb-99d6-f7c3da8c512d.png">
+
+Self Distillation Loss에 대해 알아보면, 우선 Attention Transfer에 대한 내용의 이해가 필요하다. (Attention Mechanisms 레포지토리에 해당 설명이 있음.)
+
+모델을 절반 정도 학습한 시점에서 다음 레이어의 Attention Map에 대한 Activate Attention Transfer를 구해 그 차이를 Loss로 구하는 과정이다. 
+그렇게 되면 이전의 Layer가 이후의 Layer에 좀 더 필요한 지점에 Attention 하게끔 학습이 된다는 것이다.
+
+<img width="735" alt="스크린샷 2021-02-14 오후 8 25 03" src="https://user-images.githubusercontent.com/68293683/107875350-b9a2bd00-6f02-11eb-950b-0d53f5ccd8ec.png">
+
+Post Processing 방법은
 ## 6. LaneATT
 
