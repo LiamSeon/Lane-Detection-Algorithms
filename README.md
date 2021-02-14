@@ -12,12 +12,15 @@ Inverse Perspective Mapping 을 사용하여 좀 더 정교한 Line Detection을
 <img width="399" alt="스크린샷 2021-02-14 오후 3 52 48" src="https://user-images.githubusercontent.com/68293683/107870558-b09ef500-6edc-11eb-8cec-4711c9c88420.png">
 
 결과적으로
+
 <img width="434" alt="스크린샷 2021-02-14 오후 3 53 00" src="https://user-images.githubusercontent.com/68293683/107870564-b7c60300-6edc-11eb-9c16-aee7d988e402.png">
 
 이런 이미지로 변한다.
 
 그리고, 영상처리에서 많이 쓰이듯 필터쓰고 Threshold 값 설정해서
+
 <img width="456" alt="스크린샷 2021-02-14 오후 3 55 11" src="https://user-images.githubusercontent.com/68293683/107870586-083d6080-6edd-11eb-899c-261eef97d8a3.png">
+
 이와 같은 이미지로 변하고 여기서 Hough Transform과 RANSAC을 수행한다.
 ## 3. A Novel Lane Detection System With Efficient Ground Truth Generation
 Interpolation을 이용해 효과적으로 Annotation 하는 방법을 제시.
