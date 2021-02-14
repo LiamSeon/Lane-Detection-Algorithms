@@ -10,7 +10,7 @@ Inverse Perspective Mapping 을 사용하여 좀 더 정교한 Line Detection을
 Interpolation을 이용해 효과적으로 Annotation 하는 방법을 제시.
 
 ## 4. VPGNet
-소실점과 차선 그리고 운전 구간 들을 어노테이션한 후 Multi Task Learning을 이용해 학습시킨 Network. 하지만 MTL 이 대개 그렇듯 Loss들 간에 Balance를 맞추는 것이 어렵고 많은 양의 Annotation이 필요하다는 점이 단점이다.
+소실점과 차선 그리고 운전 구간 들을 어노테이션한 후 Multi Task Learning을 이용해 학습시킨 Network. SOTA 이긴하지만 MTL 이 대개 그렇듯 Loss들 간에 Balance를 맞추는 것이 어렵고 많은 양의 Annotation이 필요하다는 점이 단점이다.
 
 ## 5. Light weight CNNs by Self attention distillation
 RANSAC을 이용한 방법에는 비가 왔을 때 오작동을 일으키는 경향이 있음. (직선을 찾아서 바꾸는 경우이기 때문에)
