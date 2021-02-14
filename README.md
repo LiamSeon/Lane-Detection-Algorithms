@@ -72,6 +72,13 @@ Self Distillation Loss에 대해 알아보면, 우선 Attention Transfer에 대�
 
 <img width="735" alt="스크린샷 2021-02-14 오후 8 25 03" src="https://user-images.githubusercontent.com/68293683/107875350-b9a2bd00-6f02-11eb-950b-0d53f5ccd8ec.png">
 
-Post Processing 방법은
+Post Processing 방법은 우선 9x9 크기의 Smoothing filter를 Probability Map에 적용한다.
+
+그 이후 방법은 Probability 가 0.5 이상인 pixel 들에 대해 다음과 같은 과정을 진행한다.
+
+가장 높은 Probability 를 갖는 Pixel에 대해 주변 20개의 row에 대해 가장 높은 Probability를 갖는 점들을 찾는다.
+
+이후 Cubic Spline을 이용해 Lane을 Prediction 한다.
+
 ## 6. LaneATT
 
