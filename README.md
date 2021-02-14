@@ -31,8 +31,22 @@ Interpolation을 이용해 효과적으로 Annotation 하는 방법을 제시.
 <img width="324" alt="스크린샷 2021-02-14 오후 3 51 13" src="https://user-images.githubusercontent.com/68293683/107870527-79304880-6edc-11eb-823d-f894c3673bc3.png">
 
 모델의 구조는 다음과 같고
+
 <img width="969" alt="스크린샷 2021-02-14 오후 3 59 01" src="https://user-images.githubusercontent.com/68293683/107870648-90236a80-6edd-11eb-951b-52e8c83c6625.png">
 
+Loss function은 다음과 같다.
+
+<img width="353" alt="스크린샷 2021-02-14 오후 4 07 56" src="https://user-images.githubusercontent.com/68293683/107870784-cf05f000-6ede-11eb-8e9f-f2e3f50a2fdd.png">
+
+이제 Vaninshing Point를 이용해 어떻게 Lane을 Regression 해줄 지가 중요한데,
+
+우선 모델에서 Lane일 확률이 높다고 판정된 픽셀을 각각 bin에 넣으면서 클러스터링을 해준다.
+
+이 때, bin의 맨 위에 인접한 픽셀이 있다면 해당 bin으로 들어가고 그렇지 않다면 새로운 bin을 만든다. 각각의 bin은 군집을 형성할 것이다.
+
+이제 bin에서 VP로부터 가장 먼 점을 골라준다. 그 해당 점으로부터 가장 가까운 VP들로 연결된 bin의 집합들이 있을 것이다.
+
+그 각각의 bin에서 VP로부터 가장 먼 점들을 polynomial regression 해서 Line을 그려준다.
 
 ## 5. Light weight CNNs by Self attention distillation
 RANSAC을 이용한 방법에는 비가 왔을 때 오작동을 일으키는 경향이 있음. (직선을 찾아서 바꾸는 경우이기 때문에)
@@ -43,3 +57,4 @@ RANSAC을 이용한 방법에는 비가 왔을 때 오작동을 일으키는 경
 하지만, Multi task learning 같은 경우에는 소실점을 마킹하고 운전 구역을 Annotation 하는 등 더 비싼 데이터를 이용함. 또한 MTL의 경우 Loss를 최적화하기 힘들게 설계되어있음. Message Passing은 Feed forward time이 상대적으로 증가하고 낮은 하드웨어 스펙을 요구하는 Lane Detection 특성 상 큰 문제점이 될 수 있음.
 
 ## 6. LaneATT
+
