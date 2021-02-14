@@ -26,7 +26,7 @@ Inverse Perspective Mapping 을 사용하여 좀 더 정교한 Line Detection을
 Interpolation을 이용해 효과적으로 Annotation 하는 방법을 제시.
 
 ## 4. VPGNet
-소실점과 차선 그리고 운전 구간 들을 어노테이션한 후 Multi Task Learning을 이용해 학습시킨 Network. SOTA 이긴하지만 MTL 이 대개 그렇듯 Loss들 간에 Balance를 맞추는 것이 어렵고 많은 양의 Annotation이 필요하다는 점은 단점이다. (높은 사양의 컴퓨팅 파워를 요구하기 때문에 현업에는 적합하지 않을 수 있다.)
+소실점과 차선 그리고 운전 구간 들을 어노테이션한 후 Multi Task Learning을 이용해 학습시킨 Network. SOTA 이긴하지만 MTL 이 대개 그렇듯 Loss들 간에 Balance를 맞추는 것이 어렵고 많은 양의 Annotation이 필요하다는 점은 단점이다. (또한, 높은 사양의 컴퓨팅 파워를 요구하기 때문에 현업에는 적합하지 않을 수 있다.)
 
 <img width="324" alt="스크린샷 2021-02-14 오후 3 51 13" src="https://user-images.githubusercontent.com/68293683/107870527-79304880-6edc-11eb-823d-f894c3673bc3.png">
 
