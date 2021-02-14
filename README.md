@@ -4,13 +4,13 @@ Organizing and implementing multiple papers
 ## 1. Hough Transformation & RANSAC
 
 ## 2. Real time Detection of Lane Markers in Urban Streets
-Inverse Perspective Mapping 을 사용하여 좀 더 정교한 Line Detection을 수행
+Inverse Perspective Mapping 을 사용하여 좀 더 정교한 Line Detection을 수행.
 
 ## 3. A Novel Lane Detection System With Efficient Ground Truth Generation
 Interpolation을 이용해 효과적으로 Annotation 하는 방법을 제시.
 
 ## 4. VPGNet
-
+소실점과 차선 그리고 운전 구간 들을 어노테이션한 후 Multi Task Learning을 이용해 학습시킨 Network. 하지만 MTL 이 대개 그렇듯 Loss들 간에 Balance를 맞추는 것이 어렵고 많은 양의 Annotation이 필요하다는 점이 단점이다.
 
 ## 5. Light weight CNNs by Self attention distillation
 기존의 딥러닝 기반 Lane Detection Algorithms들은 Semantic Segmentation task임.
