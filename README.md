@@ -82,3 +82,17 @@ Post Processing 방법은 우선 9x9 크기의 Smoothing filter를 Probability M
 
 ## 6. LaneATT
 
+<img width="1076" alt="스크린샷 2021-02-17 오후 9 30 46" src="https://user-images.githubusercontent.com/68293683/108204641-667d7400-7167-11eb-8cbe-5e8430b3ce51.png">
+Backbone은 cnn으로 구성되어 있는데 이미지를 이를 통과시킨다. 연산 수를 줄이기 위해 1x1 filter를 사용했다.
+
+그 이후 정해진 3000의 anchor를 통과시켜 feature를 뽑아낸다.
+
+각각의 anchor들을 attention mechanism을 통해 학습시킨다. query와 key는 각각의 anchor로 뽑아낸 feature vector이고 self attention 방법이다.
+
+이 이후 concatenation한 후 linear에 통과시켜 구분한다.
+
+<img width="380" alt="스크린샷 2021-02-17 오후 9 52 36" src="https://user-images.githubusercontent.com/68293683/108206965-73e82d80-716a-11eb-8fc8-fc45d7a82816.png">
+
+output은 Lane의 종류인 p와 그리고 각각의 y좌표에 의해 매핑되는 x의 위치를 뽑아낸다
+
+즉 Regression Loss function은 각각의 x 좌표의 horizontal distance이다.
